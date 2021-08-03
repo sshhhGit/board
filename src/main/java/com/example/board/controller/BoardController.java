@@ -53,4 +53,19 @@ public class BoardController {
         boardService.savePost(boardDto);
         return "redirect:/";
     }
+
+    @DeleteMapping("/post/{id}")
+    public String delete(@PathVariable("id") Long id) {
+        boardService.deletePost(id);
+        return "redirect:/";
+    }
+    @GetMapping("/signin")
+    public String signin() {
+        return "board/signin.html";
+    }
+
+    @GetMapping("/signup")
+    public String signip() {
+        return "board/signup.html";
+    }
 }

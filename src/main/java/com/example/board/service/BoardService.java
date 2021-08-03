@@ -22,6 +22,7 @@ public class BoardService {
         return boardRepository.save(boardDto.toEntity()).getId();
     }
 
+    @Transactional
     public List<BoardDto> getBoardList() {
         List<Board> boardList = boardRepository.findAll();
         List<BoardDto> boardDtoList = new ArrayList<>();
@@ -39,6 +40,7 @@ public class BoardService {
         return boardDtoList;
     }
 
+    @Transactional
     public BoardDto getPost(Long id) {
         Board board = boardRepository.findById(id).get();
 
@@ -50,5 +52,10 @@ public class BoardService {
                 .createdDate(board.getCreateDate())
                 .build();
         return boardDto;
+    }
+
+    @Transactional
+    public void deletePost(Long id) {
+        boardRepository.deleteById(id);
     }
 }
