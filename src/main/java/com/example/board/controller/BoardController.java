@@ -59,13 +59,13 @@ public class BoardController {
         boardService.deletePost(id);
         return "redirect:/";
     }
-    @GetMapping("/signin")
-    public String signin() {
-        return "board/signin.html";
-    }
-
-    @GetMapping("/signup")
-    public String signip() {
-        return "board/signup.html";
-    }
+//    @GetMapping("/signin")
+//    public String signin() {
+//        return "board/signin.html";
+//    }
+//
+//    @GetMapping("/signup")
+//    public String signup() {
+//        return "board/signup.html";
+//    }
 }
